@@ -1,0 +1,27 @@
+<table>
+  <tr>
+    <th class="text-center">Title</th>
+    <th class="text-center">Description</th>
+    <th class="text-center">Release year</th>
+    <th class="text-center">Category</th>
+    <th class="text-center">Rate</th>
+    <th class="text-center">Last Update</th>
+  </tr>
+  <tr ng-repeat="film in films" 
+      ng-click="filmDetail(film.film_id, film.title); listActors(film.film_id); listNote(film.film_id)"">  
+    <!-- Display the film details -->
+    {{nofilm}}
+    <td>{{film.title}}</td>
+    <td>{{film.description | limitTo:numLimit}}</td>
+    <td class="text-center">{{film.release_year}}</td>
+    <td class="text-center">{{film.name}}</td>
+    <td class="text-center">{{film.rating}}</td>
+    <td class="text-center">{{film.last_update}}</td>
+  </tr>
+  <!-- Set the pagination -->
+    
+</table> 
+<ul ng-show="pagi" class="pagination" 
+        ng-repeat="i in pageCount(page) track by $index">
+      <li ng-click="returnvalue($index + 1)"><a>{{$index + 1}}</a></li>
+    </ul>

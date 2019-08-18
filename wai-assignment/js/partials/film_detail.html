@@ -1,0 +1,29 @@
+<aside id='detail'>
+            <h1>Film Details</h1>
+<!-- Display the film use ng-repeat -->
+<div ng-repeat='films in filmdetails'>      
+  <p>TITLE:            {{films.title}}</p>  
+  <p>DESCRIPTION:      {{films.description}}</p>
+  <p>RELEASE YEAR:     {{films.release_year}}</p>  
+  <p>CATEGORY:         {{films.name}}</p>  
+  <p>RENTAL DURATION:  {{films.rental_duration}} days</p>  
+  <p>RENTAL RATE:      {{films.rental_rate}}</p>  
+  <p>LENGTH:           {{films.length}} minutes</p>      
+  <p>REPLACEMENT COST: {{films.replacement_cost}}$</p>  
+  <p>RATE:             {{films.rating}}</p>  
+  <p>SPECIAL FEATURE:  {{films.special_features}}</p>  
+  <p>LAST UPDATE:      {{films.last_update}}</p>  
+</div>
+<br>
+<!-- Display actors -->
+<p>ACTORS: </p>
+<div ng-repeat="actor in listactors">
+  {{actor.first_name}}
+  {{actor.last_name}}
+</div>
+<!-- Display the note when user logged -->
+<div ng-show="addnote">
+  <textarea id="" cols="50" rows="5" ng-model="note"></textarea>
+  <button ng-click="insertnote(note);">Add note</button>   
+</div>
+</aside>

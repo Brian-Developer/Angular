@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app = "CourseApp">
+  <head>
+    <meta charset="utf-8">
+    <title>AngularJS Course-Students SPA</title>
+    <!-- Link to library to use in Application -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-resource.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="resources/css/app.css">
+  </head>
+  <body> 
+    <!-- Application Controller -->
+    <section id='binder' ng-controller="AppController">
+      <h2>FILM INFORMATION SYSTEM</h2>
+      <!-- Login Controller -->
+      <section id='login' ng-controller = 'LoginController'> 
+          <article ng-include="'./js/partials/login.html'"></article> 
+        
+      </section>
+      <!-- Category Selection Controller -->
+      <section ng-controller = 'CategoryController'>
+         <article ng-include="'./js/partials/category.html'"></article>   
+      </section>
+      <br>
+      <!-- Search Controller -->
+      <section ng-controller = 'SearchController'>
+         <div class="wrap">
+           <div class="search">
+             <input type = "text" class="searchTerm" placeholder="What are you looking for?" ng-model = "searchval" />
+             <button ng-click="searchFilms(searchval)" class="searchButton"><i class="fa fa-search"></i></button>
+             <br/><br/>
+           </div>
+         </div>
+      </section>
+      <!-- Display all films Controller -->
+      <section ng-controller = 'FilmController'>
+        <!-- Display Film Detail after click Film Title -->
+        <section ng-show="filmdetail" ng-controller='showFilmController'">
+          <br><br><br>
+            <article ng-include="'./js/partials/film_detail.html'"></article>    
+        </section> 
+        <!-- Show all films inside the table -->
+        <article ng-include="'./js/partials/list_films.html'"></article>      
+      </section>
+    </section> 
+    <!-- link to our application files -->
+    <script src="js/app.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/services.js"></script>
+  </body>
+</html>

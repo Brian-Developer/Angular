@@ -1,0 +1,7 @@
+<!-- Show the select option -->
+<select ng-options="category.name for category in categories" 
+		ng-change="searchCate(catecode)" 
+		ng-model="catecode" 
+		value="{{category.category_id}}">
+    <option value="">Select Category</option>
+</select>

@@ -1,0 +1,6 @@
+<config>
+	<title>Author Information</title>
+	<username></username>
+	<password></password>
+	<dns>/Applications/XAMPP/xamppfiles/htdocs/wai-assignment/server/db/nfc_films.sqlite</dns>
+</config>
